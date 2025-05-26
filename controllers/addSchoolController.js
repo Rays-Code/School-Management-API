@@ -23,9 +23,22 @@ export const addSchool = async (req, res) => {
         // client
         const db = await getDBConnection()
 
-        // inserting values into schools table
+        // checking if school already exists in schools table
         const values = [name, address, latitude, longitude]
 
+        const [IsSchoolExists] = await db.query(`
+            SELECT * FROM schools where name = ? AND address = ? 
+            AND latitude = ? AND longitude = ?
+            `,
+            values
+        )
+
+        if(IsSchoolExists){
+            return res.status(400).json({message: 'The provided school already exists'})
+        }
+
+
+        // inserting values into schools table
         const [insertResult] = await db.query(`
             INSERT INTO schools (name, address, latitude, longitude)
             VALUES (?, ?, ?, ?)`,
