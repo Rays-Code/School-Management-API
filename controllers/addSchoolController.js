@@ -27,10 +27,8 @@ export const addSchool = async (req, res) => {
         const values = [name, address, latitude, longitude]
 
         const [IsSchoolExists] = await db.query(`
-            SELECT * FROM schools where name = ? AND address = ? 
-            AND latitude = ? AND longitude = ?
-            `,
-            values
+            SELECT * FROM schools where name = ? AND address = ?`,
+            [values[0], values[1]]
         )
 
         if(IsSchoolExists.length > 0){
