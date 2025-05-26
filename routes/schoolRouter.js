@@ -6,7 +6,7 @@ const schoolRouter = express.Router();
 
 
 schoolRouter.post('/addSchool', addSchool);
-schoolRouter.get('/listSchool', listSchool);
+schoolRouter.get('/listSchools', listSchool);
 
 
 

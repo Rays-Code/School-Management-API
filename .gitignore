@@ -1,9 +1,6 @@
 # Node modules
 node_modules/
 
-# Certificates
-./mysql/certs
-
 # Environment variables
 .env
 .env.*  # for multiple env files like .env.dev, .env.production
