@@ -1,0 +1,51 @@
+# Node modules
+node_modules/
+
+# Certificates
+./mysql/certs
+
+# Environment variables
+.env
+.env.*  # for multiple env files like .env.dev, .env.production
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Editor-specific files
+.vscode/
+.idea/
+
+# Build artifacts
+dist/
+build/
+coverage/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Dependency lock files (optional - depending on your preference)
+# Uncomment only if you're not using them
+# package-lock.json
+# yarn.lock
+
+# PM2 process files
+pids/
+*.pid
+*.seed
+
+# Docker
+docker-compose.override.yml
+
+# Misc
+*.swp
+*.swo
