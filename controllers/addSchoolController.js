@@ -33,7 +33,7 @@ export const addSchool = async (req, res) => {
             values
         )
 
-        if(IsSchoolExists){
+        if(IsSchoolExists.length > 0){
             return res.status(400).json({message: 'The provided school already exists'})
         }
 
